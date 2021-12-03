@@ -1,0 +1,44 @@
+.quest{
+   
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    float: left;
+}
+
+table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+    margin-top: 100px;
+}
+
+.text{
+    text-align: center;
+    font-size: 32px;
+
+}
+
+.buttonStyle{
+    padding: 5px 15px;
+    background: rgb(153,123 , 88, 0.3);
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.tableElem{
+    background-color: rgb(153,123 , 88, 0.3);
+    
+}
+
+
+@media only screen and (max-width: 500px){
+  
+  .quest{
+    height: 250%;
+    }
+}
