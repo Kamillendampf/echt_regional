@@ -1,6 +1,6 @@
 var http = require('http');
 const { compileFunction } = require('vm');
-var url = 
+
 
 var server = http.createServer(function (req, res) {
 
@@ -28,7 +28,7 @@ var server = http.createServer(function (req, res) {
         });
 
         req.on("end", function(){
-            res.writeHead(301,{Location: 'http://localhost/Umfrage/index.html' });
+           res.writeHead(200, { "Content-Type": "text/html" });
             res.end("location('http://localhost')");
         });
     }
