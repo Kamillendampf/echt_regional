@@ -1,6 +1,6 @@
 var http = require('http');
 const { compileFunction } = require('vm');
-
+var url = 
 
 var server = http.createServer(function (req, res) {
 
@@ -18,7 +18,7 @@ var server = http.createServer(function (req, res) {
             for (var i = 0; i < list.length; i++){
                 elements.push(list[i].split("="));
             }
-            for (var i = 0; i < elements.length-1; i++){
+            for (var i = 0; i < elements.length-2; i++){
                 ergebnis += parseInt(elements[i][1])
             }
             decode += elements[elements.length-1][1];
@@ -28,7 +28,7 @@ var server = http.createServer(function (req, res) {
         });
 
         req.on("end", function(){
-            res.writeHead(200, { "Content-Type": "text/html" });
+            res.writeHead(301,{Location: 'http://localhost/Umfrage/index.html' });
             res.end("location('http://localhost')");
         });
     }
