@@ -2,7 +2,7 @@
   Fragen fuer die Zufreidenheit der Kunden.
   
 #ToDo
-  - Fragen einbinden
+  - Fragen einbinden (Erledigt)
   - Datenbank aufsetzen
   - in Datenbank schreiben
   - Datenbank auslesen
