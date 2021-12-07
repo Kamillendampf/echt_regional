@@ -7,6 +7,7 @@ var server = http.createServer(function (req, res) {
  if (req.method === "POST") {
     
         var body = "";
+        var b = "";
         var list = [];
         var elements= [];
         var ergebnis = 0;
@@ -14,22 +15,15 @@ var server = http.createServer(function (req, res) {
         var decode = "";
         req.on("data", function (chunk) {
             body += chunk;
-            list = body.split("&");
-            for (var i = 0; i < list.length; i++){
-                elements.push(list[i].split("="));
-            }
-            for (var i = 0; i < elements.length-2; i++){
-                ergebnis += parseInt(elements[i][1])
-            }
-            decode += elements[elements.length-1][1];
-            bewertung += decode.charAt(1);
-            console.log(ergebnis);
-            console.log(bewertung);
+            list = JSON.parse(body)
+            b = list["antwort"+8]
+            console.log(b)
+            console.log(list)
         });
 
         req.on("end", function(){
            res.writeHead(200, { "Content-Type": "text/html" });
-            res.end("location('http://localhost')");
+            res.end(b);
         });
     }
 

@@ -13,7 +13,7 @@
 
     <div class="quest">
     <table class="table">
-        <form action="http://localhost:3000" method="POST">
+         <!--<form  method="POST"> action="--http://localhost:3000"-->
         <tr class="tableElem"><td> <p class="text"> Bist Du mit der Gemüsemenge in der Kiste zufrieden?</p> </td> </tr>
          <tr><td> 
             1
@@ -95,18 +95,18 @@
     </td> </tr>
         <tr class="tableElem"><td> <p class="text"> Welches Gemüse aus der Kiste fandest du am Besten?</p> </td> </tr>
         <tr><td> 
-            <textarea autofocus name="bewertung"></textarea>
+            <textarea autofocus name="gemuese" id="acht"></textarea>
        </td> </tr>
 
         <tr class="tableElem"><td> <p class="text">Haben sie weitere Verbesserungsvorschl&aumlge?</p> </td> </tr>
         <tr><td> 
-            <textarea autofocus name="bewertung"></textarea>
+            <textarea autofocus name="bewertung" id="neun"></textarea>
        </td> </tr>
         <tr><td> <p class="text"> Vielen Dank!</p> </td> </tr>
 
-         <tr><td> <input type="submit"  value="Senden" class="buttonStyle">      
+         <tr><td> <input type="submit"  value="Senden" onclick="dataTransfer()" class="buttonStyle">      
         </td> </tr>
-        </form>
+       <!--</form>--> 
         
       
     </table>
@@ -114,6 +114,6 @@
     </div>
 
     </body>
-
+    <script src="sendToServer.js"></script>
 
 </html>
