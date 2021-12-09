@@ -40,8 +40,9 @@ function dataTransfer(){
         }
         jsonData = JSON.stringify(msgList);
         console.log(jsonData);
-        xhr.open('POST', host)
-        xhr.send(jsonData)
+        xhr.open('POST', host);
+        xhr.send(jsonData);
+        document.location="index.html"
     }
 
 
