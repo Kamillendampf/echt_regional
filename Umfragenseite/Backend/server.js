@@ -16,8 +16,7 @@ var server = http.createServer(function (req, res) {
         req.on("data", function (chunk) {
             body += chunk;
             list = JSON.parse(body)
-            b = list["antwort"+8]
-            console.log(b)
+
             console.log(list)
         });
 
