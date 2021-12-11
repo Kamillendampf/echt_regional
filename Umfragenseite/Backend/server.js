@@ -4,12 +4,12 @@ const { func } = require('assert-plus');
 const { resolve } = require('path/posix');
 const { exit, allowedNodeEnvironmentFlags } = require('process');
 const sqlite3 = require('sqlite3');
-const { clean } = require('nopt');
-service = './database/test.db';
+const service = './database/test.db';
 let db = '';
 var answers = '';
 const sqlINSERT = 'INSERT INTO testt VALUES(?)';
 const sqlSELECTall = 'SELECT * FROM testt';
+
 
 
 connect();
@@ -30,7 +30,7 @@ var server = http.createServer(function (req, res) {
             insert(body);
             list = JSON.parse(body)
 
-            
+            console.log(getAnswers());
             
         });
 
@@ -79,8 +79,8 @@ function getAnswers() {
                 clean.push(JSON.parse(row.jsonFile))
                 
             });
-            console.log(clean);
+            //console.log(clean);
             return clean;
         }
-    })
+    });
 }

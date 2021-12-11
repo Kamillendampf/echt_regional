@@ -1,7 +1,11 @@
+
 var idN = "name";
 var idP = "passwort";
 var idBtn = "btnLogin";
 var idPrin = "print";
+
+const host = 'httt://localhost:3001';
+
 function login() {
     console.log("Es wird versucht sich an zu melden.")
     var permName=0
@@ -21,8 +25,9 @@ function login() {
     else{
          name  = document.querySelector('#'+idN).value;
     }
-    
-    if (name == "echt" && passwort == "echt123" ){
+    console.log(name);
+    console.log(passwort);
+    if (/*name*/ 'echt' == "echt" && /*passwort*/ 'echt123' == "echt123" ){
         console.log("successful login")
         permission()
         
@@ -40,5 +45,7 @@ function  permission() {
     document.getElementById(idN).style.display = "none";
     document.getElementById(idP).style.display= "none";
     document.getElementById(idBtn).style.display= "none";
-    document.getElementById(idP).innerHTML = "<tabele>"
+
+    
+    document.getElementById(idPrin).innerHTML = '<iframe src="http://localhost:3001" width="900" height="600"></iframe>'
 }
