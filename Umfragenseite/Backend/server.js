@@ -79,6 +79,7 @@ function getAnswers() {
                 clean.push(JSON.parse(row.jsonFile))
                 
             });
+            console.log(clean);
             return clean;
         }
     })
