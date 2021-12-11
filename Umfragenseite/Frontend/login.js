@@ -47,5 +47,5 @@ function  permission() {
     document.getElementById(idBtn).style.display= "none";
 
     
-    document.getElementById(idPrin).innerHTML = '<iframe src="http://localhost:3001" width="900" height="600"></iframe>'
+    document.getElementById(idPrin).innerHTML = '<iframe src="http://localhost:3001" width="100%" height="600"></iframe>'
 }
