@@ -27,7 +27,7 @@ function login() {
     }
     console.log(name);
     console.log(passwort);
-    if (/*name*/ 'echt' == "echt" && /*passwort*/ 'echt123' == "echt123" ){
+    if (name == "echt" && passwort == "echt123" ){
         console.log("successful login")
         permission()
         

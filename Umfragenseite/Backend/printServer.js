@@ -19,6 +19,8 @@ var durchAnswer4 = 0;
 var durchAnswer5 = 0;
 var durchAnswer6 = 0;
 
+var auflistung = '';
+
 var countA01 = [];
 var countA02 = [];
 var countA03 = [];
@@ -97,7 +99,17 @@ var server = http.createServer(function (req, res) {
                 durchAnswer4 = durchAnswer4 + parseInt(jasFile.antwort4);
                 durchAnswer5 = durchAnswer5 + parseInt(jasFile.antwort5);
                 durchAnswer6 = durchAnswer6 + parseInt(jasFile.antwort6);
-
+                auflistung = auflistung + "<br>"+
+                "<p class ='headline'>Bist Du mit der Gem&uumle;semenge in der Kiste zufrieden?</p> <br><p>"+ jasFile.antwort0 +
+                "</p><br><p class ='headline'>Ist die Sauberkeit des Gemüses ausreichend? </p> <br><p>"+jasFile.antwort1+
+                "</p><br><p class ='headline'> Wie findest du Bittersalate (z.B. Radicchio, Zuckerhut)? </p> <br><p>" +jasFile.antwort2 +
+                "</p><br><p class ='headline'> Wie zufrieden bist du mit der Gemüsekiste?</p> <br><p>"+ jasFile.antwort3 +
+                "</p><br><p class ='headline'>F&uuml;r wie wahrscheinlich h&auml;ltst du es an einer Abholstation in deiner Gemeinde das Gemuese ab zu holen? </p> <br> <p>"+jasFile.antwort4+
+                "</p><br><p class ='headline'>Wie wahrscheinlich ist es, dass du meine Kiste weiter empfiehlst? </p> <br> <p>" + jasFile.antwort5+
+                "</p><br><p class ='headline'>Wie wahrscheinlich ist es, dass du ein Saisons-Abo (ohne Pause) abschliesst? </p> <br> <p>" + jasFile.antwort6+
+                "</p><br><p class ='headline'> Welches Gemüse aus der Kiste fandest du am Besten?</p> <br> <p>" + jasFile.antwort7+
+                "</p><br><p class ='headline'>Haben sie weitere Verbesserungsvorschl&aumlge? </p> <br> <p>" + jasFile.antwort8+
+                "</p><br><br><br><br><br>";
                 if (parseInt(jasFile.antwort1) == 1){
                     countA01.push(1);
                 }
@@ -229,7 +241,7 @@ var server = http.createServer(function (req, res) {
                     countA65.push(5);
                 }
                 if(parseInt(jasFile.antwort6)==6){
-                    countA6.push(6);
+                    countA66.push(6);
                 }
 
             }
@@ -250,80 +262,7 @@ var server = http.createServer(function (req, res) {
             durchAnswer4 = durchAnswer4/clean.length;
             durchAnswer5 = durchAnswer5/clean.length;
             durchAnswer6 = durchAnswer6/clean.length;
-            res.write("<html><header><meta http-equiv='refresh' content='5'></header> <body> <table style='width: 100% ;''><tr style='border: 2px solid black'><th style='border: 2px solid black; height: 50px;'> Kategorie</th><th style='border: 2px solid black; height: 50px;'> Durchschnitt</th><th style='border: 2px solid black; height: 50px;'> 1 </th><th style='border: 2px solid black; height: 50px;'> 2 </th><th style='border: 2px solid black; height: 50px;'> 3 </th><th style='border: 2px solid black; height: 50px;'> 4 </th><th style='border: 2px solid black; height: 50px;'> 5 </th><th style='border: 2px solid black; height: 50px;'> 6 </th></tr>"
-            + "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th> "+
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer0+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA01.length+"</td>"+
-                "<td style='border: 2px solid black; height: 50px;'>"+countA02.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA03.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA04.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA05.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA06.length+"</td>"+
-             "</tr>"+
-             "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th>"+ 
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer1+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA11.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA12.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA13.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA14.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA15.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA16.length+"</td>"+
-            "</tr>"+
-             "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th>"+ 
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer2+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA21.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA22.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA23.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA24.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA25.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA26.length+"</td>"+
-             "</tr>"+
-             "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th>"+ 
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer3+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA31.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA32.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA33.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA34.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA35.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA36.length+"</td>"+
-             "</tr>"+
-             "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th>"+ 
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer4+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA41.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA42.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA43.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA44.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA45.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA46.length+"</td>"+
-             "</tr>"+
-             "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th>"+ 
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer5+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA51.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA52.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA53.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA54.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA55.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA56.length+"</td>"+
-             "</tr>"+
-             "<tr style='border: 2px solid black'>"+
-                 "<th style='border: 2px solid black; height: 50px;'> Frage 1</th> "+
-                 "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer6+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA61.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA62.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA63.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA64.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA65.length+"</td>"+
-                 "<td style='border: 2px solid black; height: 50px;'>"+countA66.length+"</td>"+
-             "</tr>"+
-         "</table> </body> </html> </html>'");
-          
-            
+
         }
 
        
@@ -334,7 +273,8 @@ var server = http.createServer(function (req, res) {
 
     
     //durchAnswer0= 12;
-    res.write("<html><header><meta http-equiv='refresh' content='5'></header>  <body> Ausgabe  <table style='width: 100% ;''><tr style='border: 2px solid black'><th style='border: 2px solid black; height: 50px;'> Kategorie</th><th style='border: 2px solid black; height: 50px;'> Durchschnitt</th><th style='border: 2px solid black; height: 50px;'> 1 </th><th style='border: 2px solid black; height: 50px;'> 2 </th><th style='border: 2px solid black; height: 50px;'> 3 </th><th style='border: 2px solid black; height: 50px;'> 4 </th><th style='border: 2px solid black; height: 50px;'> 5 </th><th style='border: 2px solid black; height: 50px;'> 6 </th></tr>"
+    res.write("<html><header><meta http-equiv='refresh' content='60'> <style>.headline{background-color: rgb(153,123 , 88, 0.8); text-align: center; width: 100%; hight: 50px;} p{ text-align: center; width: 100%; } div{ width: 100%; floar: left; }</style></header>"+
+    "<body> <div> <table style='width: 100% ;''><tr style='border: 2px solid black'><th style='border: 2px solid black; height: 50px;'> Kategorie</th><th style='border: 2px solid black; height: 50px;'> Durchschnitt</th><th style='border: 2px solid black; height: 50px;'> 1 </th><th style='border: 2px solid black; height: 50px;'> 2 </th><th style='border: 2px solid black; height: 50px;'> 3 </th><th style='border: 2px solid black; height: 50px;'> 4 </th><th style='border: 2px solid black; height: 50px;'> 5 </th><th style='border: 2px solid black; height: 50px;'> 6 </th></tr>"
     + "<tr style='border: 2px solid black'>"+
          "<th style='border: 2px solid black; height: 50px;'> Frage 1</th> "+
          "<td style='border: 2px solid black; height: 50px;'>"+durchAnswer0+"</td>"+
@@ -404,8 +344,8 @@ var server = http.createServer(function (req, res) {
          "<td style='border: 2px solid black; height: 50px;'>"+countA64.length+"</td>"+
          "<td style='border: 2px solid black; height: 50px;'>"+countA65.length+"</td>"+
          "<td style='border: 2px solid black; height: 50px;'>"+countA66.length+"</td>"+
-     "</tr>"+
- "</table> </body> </html>");
+     "</tr></table> </div><div style='width=100%; float: right; background-color: black; ><p> " + auflistung +
+ "</p></div> </body> </html>");
     resetParas();
     res.end();
     }).listen(3001);
@@ -488,4 +428,6 @@ function resetParas(){
     countA64 = [];
     countA65 = [];
     countA66 = [];
+
+    auflistung = '';
     }
