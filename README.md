@@ -1,14 +1,6 @@
-# echt_regional
-  Fragen fuer die Zufreidenheit der Kunden.
+#Surveys page
   
-#ToDo
-  - Fragen einbinden                                  ☑️
-  - Datenbank aufsetzen                               ☑️
-  - in Datenbank schreiben                            ☑️
-  - Datenbank auslesen                                ☑️
-  - Nutzerlogin                                       ☑️
-  - Ausgabe durch Javascript in Ausgabe.html
-  - Daten von server in Javascript laden
-  - Daten auswertungs algorythmus
-  - Passende einstellungen fuer den Server treffen
-  - Nutzer testst
+
+With server and UI. Is completely stable.
+
+The server coce is dumb
