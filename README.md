@@ -3,6 +3,6 @@
 
 With server and UI. Is completely stable.
 
-The server coce is dumb
+The server code is dumb
 
 Feel free to fork it!
